@@ -1,12 +1,18 @@
-import Body from "../../components/Default/body";
-import Header from "../../components/Layout/header";
+import Body from "./Contribute";
+import Footer from "./Footer";
+import Introduce from "./Introduce";
+import Zigzag from "./Zigzag";
+//import DefaultLayout from "../../components/Layout/DefaultLayout";
+
 
 function Home() {
     return (
         <>
-            <Header/>
-            <Body/>
-            </>
+            <Body />
+            <Introduce />
+            <Zigzag />
+            <Footer />
+        </>
     );
 
 }

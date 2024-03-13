@@ -13,8 +13,8 @@ export const metadata = {
   
             {/* Page header */}
             <div className="max-w-3xl mx-auto text-center pb-12 md:pb-20">
-              <h1 className="h1 mb-4">Forgot your password?</h1>
-              <p className="text-xl text-gray-400">We'll email you instructions on how to reset it.</p>
+              <h1 className="h1 mb-4">Bạn quên mật khẩu?</h1>
+              <p className="text-xl text-gray-400">Chúng tôi sẽ gửi lại mật khẩu mới của bạn qua email.</p>
             </div>
   
             {/* Form */}
@@ -28,15 +28,14 @@ export const metadata = {
                 </div>
                 <div className="flex flex-wrap -mx-3 mt-6">
                   <div className="w-full px-3">
-                    <button className="btn text-white bg-purple-600 hover:bg-purple-700 w-full">Reset Password</button>
+                    <button className="btn text-white bg-purple-600 hover:bg-purple-700 w-full">Đặt lại mật khẩu</button>
                   </div>
                 </div>
               </form>
               <div className="text-gray-400 text-center mt-6">
-                <Link to="/login" className="text-purple-600 hover:text-gray-200 transition duration-150 ease-in-out">Cancel</Link>
+                <Link to="/login" className="text-purple-600 hover:text-gray-200 transition duration-150 ease-in-out">Trở lại</Link>
               </div>
             </div>
-  
           </div>
         </div>
       </section>

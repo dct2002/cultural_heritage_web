@@ -13,7 +13,7 @@ export const metadata = {
   
             {/* Page header */}
             <div className="max-w-3xl mx-auto text-center pb-12 md:pb-20">
-              <h1 className="h1">Welcome back. We exist to make entrepreneurship easier.</h1>
+              <h1 className="h1">Xin chào. Hãy đăng nhập để bắt đầu.</h1>
             </div>
   
             {/* Form */}
@@ -26,14 +26,14 @@ export const metadata = {
                         <path d="M7.9 7v2.4H12c-.2 1-1.2 3-4 3-2.4 0-4.3-2-4.3-4.4 0-2.4 2-4.4 4.3-4.4 1.4 0 2.3.6 2.8 1.1l1.9-1.8C11.5 1.7 9.9 1 8 1 4.1 1 1 4.1 1 8s3.1 7 7 7c4 0 6.7-2.8 6.7-6.8 0-.5 0-.8-.1-1.2H7.9z" />
                       </svg>
                       <span className="h-6 flex items-center border-r border-white border-opacity-25 mr-4" aria-hidden="true"></span>
-                      <span className="flex-auto pl-16 pr-8 -ml-16">Sign in with Google</span>
+                      <span className="flex-auto pl-16 pr-8 -ml-16">Tiếp tục với Google</span>
                     </button>
                   </div>
                 </div>
               </form>
               <div className="flex items-center my-6">
                 <div className="border-t border-gray-700 border-dotted grow mr-3" aria-hidden="true"></div>
-                <div className="text-gray-400">Or, sign in with your email</div>
+                <div className="text-gray-400">Đăng nhập với tài khoản</div>
                 <div className="border-t border-gray-700 border-dotted grow ml-3" aria-hidden="true"></div>
               </div>
               <form>
@@ -45,7 +45,7 @@ export const metadata = {
                 </div>
                 <div className="flex flex-wrap -mx-3 mb-4">
                   <div className="w-full px-3">
-                    <label className="block text-gray-300 text-sm font-medium mb-1" htmlFor="password">Password</label>
+                    <label className="block text-gray-300 text-sm font-medium mb-1" htmlFor="password">Mật khẩu</label>
                     <input id="password" type="password" className="form-input w-full text-gray-300" placeholder="Password (at least 10 characters)" required />
                   </div>
                 </div>
@@ -54,20 +54,20 @@ export const metadata = {
                     <div className="flex justify-between">
                       <label className="flex items-center">
                         <input type="checkbox" className="form-checkbox" />
-                        <span className="text-gray-400 ml-2">Keep me signed in</span>
+                        <span className="text-gray-400 ml-2">Ghi nhớ tài khoản</span>
                       </label>
-                      <Link to="/forgotpassword" className="text-purple-600 hover:text-gray-200 transition duration-150 ease-in-out">Forgot Password?</Link>
+                      <Link to="/forgotpassword" className="text-purple-600 hover:text-gray-200 transition duration-150 ease-in-out">Quên mật khẩu?</Link>
                     </div>
                   </div>
                 </div>
                 <div className="flex flex-wrap -mx-3 mt-6">
                   <div className="w-full px-3">
-                    <button className="btn text-white bg-black hover:bg-gray-700 w-full">Login</button>
+                    <button className="btn text-white bg-black hover:bg-gray-700 w-full">Đăng nhập</button>
                   </div>
                 </div>
               </form>
               <div className="text-gray-400 text-center mt-6">
-                Don’t you have an account? <Link to="/signup" className="text-purple-600 hover:text-gray-200 transition duration-150 ease-in-out">Sign up</Link>
+                Bạn chưa có tài khoản <Link to="/signup" className="text-purple-600 hover:text-gray-200 transition duration-150 ease-in-out">Đăng ký</Link>
               </div>
             </div>
   
