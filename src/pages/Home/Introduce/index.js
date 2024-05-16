@@ -5,7 +5,7 @@ export default function Introduce() {
           <div className="py-12 md:py-20 border-t border-gray-800">
   
             {/* Section header */}
-            <div className="max-w-3xl mx-auto text-center pb-12 md:pb-10">
+            <div id="introduce" className="max-w-3xl mx-auto text-center pb-12 md:pb-10">
               <h2 className="h2 mb-4">Khám phá những di sản văn hóa độc đáo của Việt Nam.</h2>
               <p className="text-xl text-gray-600">Các di sản văn hóa không chỉ góp phần quảng bá hình ảnh, đất nước con người Việt Nam mà còn trở thành một nguồn lực nội sinh quan trọng cho phát triển.</p>
             </div>
@@ -26,6 +26,7 @@ export default function Introduce() {
             {/* Image  */}
             <div className="py-5">
                 <img className="max-w-full mx-auto md:max-w-none h-auto" src="https://file1.dangcongsan.vn/data/0/images/2020/09/01/ngocnhcd/0109halong.jpg?dpi=150&quality=100&w=680" width={1100} alt="Img 01" /> 
+                <i>Ảnh: Vịnh Hạ Long - Quảng Ninh - Việt Nam</i>
             </div>
   
   

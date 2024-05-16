@@ -1,11 +1,19 @@
 import { Link } from "react-router-dom"
-
-export const metadata = {
-    title: 'Reset Password - Open PRO',
-    description: 'Page description',
-  }
+import { toast } from 'react-toastify';
+import { useState } from "react";
+import 'react-toastify/dist/ReactToastify.css';
     
   export default function ForgotPassword() {
+    const [email, setEmail] = useState('');
+
+    const handleSubmit = (event) => {
+      event.preventDefault();
+      toast.success('Kiểm tra email của bạn!', {
+        position: "top-center",
+    }
+    );
+      setEmail('');
+    }
     return (
       <section className="relative">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
@@ -19,16 +27,16 @@ export const metadata = {
   
             {/* Form */}
             <div className="max-w-sm mx-auto">
-              <form>
+              <form onSubmit={handleSubmit}>
                 <div className="flex flex-wrap -mx-3 mb-4">
                   <div className="w-full px-3">
                     <label className="block text-gray-300 text-sm font-medium mb-1" htmlFor="email">Email</label>
-                    <input id="email" type="email" className="form-input w-full text-gray-300" placeholder="you@yourcompany.com" required />
+                    <input id="email" type="email" className="form-input w-full text-gray-300" placeholder="you@yourcompany.com" value={email} onChange={(e) => setEmail(e.target.value)} required />
                   </div>
                 </div>
                 <div className="flex flex-wrap -mx-3 mt-6">
                   <div className="w-full px-3">
-                    <button className="btn text-white bg-purple-600 hover:bg-purple-700 w-full">Đặt lại mật khẩu</button>
+                    <button className="btn text-white bg-black hover:bg-purple-700 w-full">Đặt lại mật khẩu</button>
                   </div>
                 </div>
               </form>
