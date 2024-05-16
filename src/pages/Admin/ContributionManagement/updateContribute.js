@@ -47,7 +47,7 @@ function UpdateContribute() {
         },
         {
             name: 'intangible',
-            types: ['arts', 'festivals', 'customs and beliefs', 'spoken and written language', 'folk knowledge']
+            types: ['arts', 'festivals', 'customs and beliefs', 'spoken and written language', 'crafts', 'folk knowledge']
         }
       ];
 
@@ -232,7 +232,7 @@ function UpdateContribute() {
                                         { formData.category && (
                                             categorys.find(category => category.name === formData.category).types.map((type, index) => (
                                             <option key={index} value={type}>
-                                                {type === 'scenic spots' ? 'Danh lam thắng cảnh' : type === 'historical sites' ? 'Di tích lịch sử' : type === 'arts' ? 'Nghệ thuật' : type === 'festivals' ? 'Lễ hội' : type === 'customs and beliefs' ? 'Tập quán và tín ngưỡng' : type === 'spoken and written language' ? 'tiếng nói - chữ viết' : type === 'crafts' ? 'Nghề thủ công' : 'Tri thức dân gian'}
+                                                {type === 'scenic spots' ? 'Danh lam thắng cảnh' : type === 'historical sites' ? 'Di tích lịch sử' : type === 'arts' ? 'Nghệ thuật' : type === 'festivals' ? 'Lễ hội' : type === 'customs and beliefs' ? 'Tập quán và tín ngưỡng' : type === 'spoken and written language' ? 'Tiếng nói - chữ viết' : type === 'crafts' ? 'Nghề thủ công' : 'Tri thức dân gian'}
                                             </option>
                                             ))
                                         )}
