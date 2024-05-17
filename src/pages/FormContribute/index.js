@@ -79,8 +79,12 @@ const FormContribute = () => {
         }
         );
         } catch (error) {
-        console.error('Error:', error);
-        toast.error('Đã xảy ra lỗi!');
+            console.error('Error:', error);
+            if (error.response && error.response.status === 500) {
+                toast.error('Di sản đã tồn tại');
+            } else {
+                toast.error('Đã xảy ra lỗi!');
+            }
         }
     };
 
@@ -317,6 +321,8 @@ const FormContribute = () => {
                                         placeholder="Nhập nội dung"
                                         className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
                                         rows="4"
+                                        spellCheck="false" 
+                                        autoComplete="off"
                                         value={item.description}
                                         onChange={(e) => handleContentChange(e, index, 'description')}
                                     ></textarea>
@@ -354,7 +360,7 @@ const FormContribute = () => {
                         {formData.address}
                     </p>
                     { formData.image_link && (<img className="w-full mb-4" src={formData.image_link} alt="heritage" />)}
-                    <iframe className={`${formData.video_link ? '' : 'hidden'} w-full`} height="315" src={formData.video_link} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <iframe className={`${formData.video_link ? '' : 'hidden'} w-full`} height="315" src={formData.video_link} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
                     { formData.content.map((item, index) => (
                         <div key={index}>
                             <h3 className="h3 text-xl overflow-wrap break-words">

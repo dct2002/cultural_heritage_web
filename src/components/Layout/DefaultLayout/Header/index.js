@@ -80,7 +80,7 @@ function Header() {
     }, [fetchUsersId]);
 
     return (
-    <header className="absolute top-0 w-full z-40 bg-blue-100">
+    <header className="fixed top-0 w-full z-40 bg-blue-100">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 border-b border-gray-300">
         <div className="flex items-center justify-between h-20">
           <div className="shrink-0 mr-4">

@@ -42,6 +42,14 @@ function InfoUser() {
             fullname: user.fullname,
             email: user.email
           };
+          if (!newInfo.fullname || !newInfo.email) {
+            toast.warn('Vui lòng điền đầy dủ thông tin!',
+            {
+                position: "top-center",
+            }
+            );
+            return;
+          }
         try {
           await axios.put(`${apiUrl}/v1/user/update/${idUser}`, newInfo, {
             headers: {
@@ -55,7 +63,7 @@ function InfoUser() {
         );
         } catch (error) {
           console.error('Error updating user:', error);
-          toast.error('Đã xảy ra lỗi!',
+          toast.error('Email đã có người đăng ký!',
         {
             position: "top-center",
         }

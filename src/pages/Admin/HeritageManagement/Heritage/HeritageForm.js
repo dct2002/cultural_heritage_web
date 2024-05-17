@@ -76,7 +76,19 @@ const FormHeritage = () => {
         toast.success('Thêm di sản thành công!');
     } catch (error) {
         console.error('Error:', error);
-        toast.error('Đã xảy ra lỗi!');
+            if (error.response && error.response.status === 500) {
+                toast.error('Di sản đã tồn tại',
+                {
+                    position: "top-center",
+                }
+                ); 
+            } else {
+                toast.error('Đã xảy ra lỗi!',
+                {
+                    position: "top-center",
+                }
+                ); 
+            }
         }
     };
 
@@ -131,14 +143,6 @@ const FormHeritage = () => {
 
     return (
         <section className="">
-            {/* <div className="pt-12 space-x-4 flex flex-row justify-center">
-                <NavLink className="border-none bg-white rounded-md shadow-2xl text-xl basis-1/4 text-center p-1 bg-cyan-200" to="/contributetangible">
-                    Di sản vật thể
-                </NavLink>
-                <NavLink className="border-none bg-white rounded-md shadow-2xl text-xl text-center basis-1/4 p-1" to="/contributeintangible">
-                    Di sản phi vật thể
-                </NavLink>
-            </div> */}
             <div className="px-2 sm:px-6 relative sm:p-10 flex flex-wrap">
                 <div className="xl:w-[470px] md:w-[400px] sm-[400px] w-[400px] mx-auto p-6 bg-white border-2 rounded-2xl shadow-2xl ">
                     <h2 className="text-2xl font-bold mb-4 text-center">Thông tin di sản văn hóa</h2>
@@ -168,7 +172,6 @@ const FormHeritage = () => {
                                 {regions.map((region, index) => (
                                 <option key={index} value={region.name}>
                                     {region.name}
-                                    {/* { contribute.status === 'approved' ? 'Đã duyệt' : contribute.status === 'pending' ? 'Đang chờ' : 'Bị hủy' } */}
                                 </option>
                                 ))}
                             </select>
@@ -313,6 +316,8 @@ const FormHeritage = () => {
                                         name={`description${index}`}
                                         placeholder="Nhập nội dung"
                                         className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
+                                        spellCheck="false" 
+                                        autoComplete="off"
                                         rows="4"
                                         value={item.description}
                                         onChange={(e) => handleContentChange(e, index, 'description')}

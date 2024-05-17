@@ -45,16 +45,31 @@ function UpdateUser() {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
+        const putUser = {
+            usename: user.username,
+            fullname: user.fullname,
+            email: user.email,
+            isAdmin: user.isAdmin,
+        }
+        event.preventDefault();
         try {
-          await axios.put(`${apiUrl}/v1/user/update/${params.id}`, user, {
+          await axios.put(`${apiUrl}/v1/user/update/${params.id}`, putUser, {
             headers: {
               token: `Bearer ${accessToken}` 
             }
           });
         navigate('/admin/users');
-        toast.success('Cập nhật thành công!');
+        toast.success('Cập nhật thành công!',
+        {
+            position: "top-center",
+        }
+        );
         } catch (error) {
-          console.error('Error updating user:', error);
+          toast.error('Email hoạc tên đăng nhập đã có người đăng ký!',
+        {
+            position: "top-center",
+        }
+        );
         }
     };
       
@@ -119,9 +134,9 @@ function UpdateUser() {
                             type="text"
                             name="password"
                             id="password"
-                            className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
+                            disabled
+                            className="w-full text-gray-400 px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
                             value={user.password}
-                            onChange={handleChange}
                         />
                         </div>
 
@@ -158,7 +173,7 @@ function UpdateUser() {
                                 <option value="" disabled>
                                     Chọn chức vụ
                                 </option>
-                                <option value={false}>Khách hàng</option>
+                                <option value={false}>Người dùng</option>
                                 <option value={true}>Quản trị viên</option>
                                 </select>
                             </div>
