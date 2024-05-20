@@ -9,6 +9,7 @@ import {
   DialogBody,
   DialogFooter,
 } from "@material-tailwind/react";
+import YouTubePlayer from "../../../components/VideoPlayer";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -185,8 +186,8 @@ function Dashboard() {
             {sites.map(site =>(
               site._id === id ? 
               <div key={site._id}>
-                <img src={site.image_link} alt="ảnh" />
-                <iframe className={`${site.video_link ? '' : 'hidden'} w-full`} height="315" src={site.video_link} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+                { site.image_link && (<img className="w-full mb-2" src={site.image_link} alt="heritage" />)}
+                { site.video_link && <YouTubePlayer url={site.video_link} /> }
                 { site.content.map((item, index) => (
                     <div key={index}>
                       <h3 className="h3 text-xl overflow-wrap break-words">

@@ -8,6 +8,8 @@ import {
   DialogBody,
   DialogFooter,
 } from "@material-tailwind/react";
+import YouTubePlayer from '../../components/VideoPlayer';
+
 function History() {
   const [size, setSize] = useState(null);
   const [id, setId] = useState("");
@@ -101,8 +103,8 @@ function History() {
             {contributes.map(contribute =>(
               contribute._id === id ? 
               <div key={contribute._id}>
-                <img className="w-full mb-2" src={contribute.image_link} alt='ảnh'/>
-                <iframe className={`${contribute.video_link ? '' : 'hidden'} w-full`} height="315" src={contribute.video_link} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+                { contribute.image_link && (<img className="w-full mb-2" src={contribute.image_link} alt="heritage" />)}
+                { contribute.video_link && <YouTubePlayer url={contribute.video_link} /> }
                 { contribute.content.map((item) => (
                     <div key={item._id}>
                       <h3 className="h3 text-xl overflow-wrap break-words">

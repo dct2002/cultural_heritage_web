@@ -4,6 +4,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import YouTubePlayer from "../../../components/VideoPlayer";
 
 function UpdateContribute() {
 
@@ -365,7 +366,7 @@ function UpdateContribute() {
                             {formData.address}
                         </p>
                         { formData.image_link && (<img className="w-full mb-4" src={formData.image_link} alt="heritage" />)}
-                        <iframe className={`${formData.video_link ? '' : 'hidden'} w-full`} height="315" src={formData.video_link} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+                        { formData.video_link && <YouTubePlayer url={formData.video_link} /> }
                         { formData.content.map((item, index) => (
                             <div key={index}>
                                 <h3 className="h3 text-xl overflow-wrap break-words">
